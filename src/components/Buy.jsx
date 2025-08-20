@@ -12,7 +12,7 @@ const steps = [
 
 const Buy = () => (
   <div
-    className="w-full min-h-[500px] py-40 flex flex-col justify-center items-center"
+    className="w-full min-h-[500px] py-52 flex flex-col justify-center items-center"
     style={{
       background: "linear-gradient(90deg, #00080D, #011A29, #00080D)"
     }}
@@ -33,7 +33,7 @@ const Buy = () => (
       {/* Right: Steps */}
       <div className="flex flex-col items-start ml-10 max-w-lg flex-1">
         {steps.map((text, idx) => (
-          <div key={idx} className="flex items-center mb-5">
+          <div key={idx} className="flex p-2 items-center mb-5">
             <img src={arrow} alt="arrow" className="w-7 h-7 mr-3" />
             <p className="text-white text-lg font-medium">{text}</p>
           </div>

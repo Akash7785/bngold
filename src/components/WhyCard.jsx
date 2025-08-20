@@ -1,18 +1,31 @@
 import React from "react";
-// Replace these imports with your actual asset paths
 import icon from "../assets/image/gold.png";
 import coin from "../assets/image/whybgold.png";
+import whyBox from "../assets/image/whyBox.png";
+import whygradient from "../assets/image/whygradient.png";
 
 const WhyCard = () => (
-  <div className="relative flex max-w-sm">
-    {/* Card */}
-    <div className="relative w-full rounded-xl border border-white/20 overflow-visible pl-3 pr-4 pt-7 pb-7 bg-white/10 backdrop-blur-xs">
-      {/* Gradient Left Border */}
-      <div className="absolute top-0 left-0 h-full w-1 rounded-l-xl bg-gradient-to-b from-cyan-400 to-white" />
-      {/* Content */}
-      <div className="relative z-10 p-5">
+  <div className="relative flex w-sm">  {/* Increased width here */}
+    {/* Gradient attached to left side */}
+    <img
+      src={whygradient}
+      alt="gradient"
+      className="absolute left-3 top-5 h-[80%] w-17 z-20"
+      style={{ borderTopLeftRadius: "0.75rem", borderBottomLeftRadius: "0.75rem" }} // rounded-l-xl
+    />
+    {/* Card with whyBox as background */}
+    <div
+      className="relative w-full rounded-xl overflow-visible pl-3 pr-4 pt-7 pb-7"
+      style={{
+        backgroundImage: `url(${whyBox})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Content overlays directly on the image */}
+      <div className="relative z-30 p-5"> {/* z-index to keep content above gradient */}
         <div className="flex items-center gap-3">
-          <img src={icon} alt="" className="mb-2 w-6 h-6 text-[#15BFFD]" />
+          <img src={icon} alt="" className="mb-2 w-6 h-6" />
           <h3 className="text-cyan-400 text-lg font-bold mb-5">
             Binance Smart Chain
           </h3>
@@ -23,13 +36,12 @@ const WhyCard = () => (
         </p>
       </div>
     </div>
-
     {/* Coin above card, absolute positioning */}
     <img
       src={coin}
       alt="coin"
-      className="absolute -top-18 -right-15 w-44 h-44 rounded-full"
-      style={{ zIndex: 20 }}
+      className="absolute -top-15 -right-2 w-44 h-44 rounded-full"
+      style={{ zIndex: 40 }}
     />
   </div>
 );
